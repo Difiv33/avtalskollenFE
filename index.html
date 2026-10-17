@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1420" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Avtalskollen – granska hantverkarofferter, hyreskontrakt, gymavtal, avbetalningskontrakt och abonnemang och hitta fällorna innan du skriver på.">
+  <title>Avtalskollen – hitta fällorna innan du skriver på</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Avtalskollen startsida">
+        <span class="logo-mark">🔍</span>
+        <span>Avtals<strong>kollen</strong></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Huvudmeny">
+        <a href="#granska">Granska avtal</a>
+        <a href="#avtalstyper">Avtalstyper</a>
+        <a href="#rattigheter">Dina rättigheter</a>
+        <a href="#faq">Vanliga frågor</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Byt mellan ljust och mörkt tema">🌓</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Öppna menyn" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow">Gratis · Ingen registrering · Texten lämnar aldrig din dator</span>
+          <h1>Hitta fällorna i avtalet <span class="accent">innan</span> du skriver på.</h1>
+          <p class="lead">Klistra in en hantverkaroffert, ett hyreskontrakt, ett gymavtal, ett avbetalningskontrakt eller ett abonnemang. Avtalskollen markerar
+            klausuler som kan kosta dig pengar, förklarar varför och berättar vad lagen faktiskt säger.</p>
+          <div class="hero-cta">
+            <a href="#granska" class="btn btn-primary btn-lg">Granska ett avtal</a>
+            <a href="#avtalstyper" class="btn btn-ghost btn-lg">Vilka fällor letar vi efter?</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong id="ruleCount">60+</strong><span>kontrollpunkter</span></li>
+            <li><strong id="typeCount">5</strong><span>avtalstyper</span></li>
+            <li><strong>0 kr</strong><span>kostnad</span></li>
+          </ul>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="mock-doc">
+            <div class="mock-line w90"></div>
+            <div class="mock-line w70"></div>
+            <div class="mock-line w80 hl-high">Avtalet förlängs automatiskt med 12 månader…</div>
+            <div class="mock-line w60"></div>
+            <div class="mock-line w85 hl-med">Priset är ungefärligt och kan justeras…</div>
+            <div class="mock-line w75"></div>
+            <div class="mock-line w50"></div>
+          </div>
+          <div class="mock-badge">⚠️ 2 fällor hittade</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRANSKA -->
+    <section id="granska" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Granska ditt avtal</h2>
+          <p>Välj avtalstyp, klistra in texten (eller ladda upp en PDF eller textfil) och tryck på <em>Granska</em>.</p>
+        </div>
+
+        <div class="analyzer">
+          <div class="analyzer-input card">
+            <fieldset class="type-picker">
+              <legend>1. Vilken typ av avtal?</legend>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="auto" checked>
+                <span><span class="type-icon">✨</span>Känn igen automatiskt</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="hantverkare">
+                <span><span class="type-icon">🔨</span>Hantverkaroffert</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="hyra">
+                <span><span class="type-icon">🏠</span>Hyreskontrakt</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="gym">
+                <span><span class="type-icon">🏋️</span>Gymavtal</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="avbetalning">
+                <span><span class="type-icon">💳</span>Avbetalning</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="contractType" value="abonnemang">
+                <span><span class="type-icon">📱</span>Abonnemang</span>
+              </label>
+            </fieldset>
+
+            <div class="input-head">
+              <label for="contractText" class="label">2. Klistra in avtalet – text eller PDF</label>
+              <div class="input-tools">
+                <label class="btn btn-small btn-ghost file-btn">
+                  📄 Ladda upp PDF / .txt
+                  <input type="file" id="fileInput" accept=".pdf,application/pdf,.txt,text/plain" hidden>
+                </label>
+                <div class="dropdown">
+                  <button class="btn btn-small btn-ghost" id="exampleBtn" aria-haspopup="true" aria-expanded="false">🧪 Testa med exempel ▾</button>
+                  <div class="dropdown-menu" id="exampleMenu" role="menu">
+                    <button role="menuitem" data-example="hantverkare">🔨 Badrumsrenovering</button>
+                    <button role="menuitem" data-example="hyra">🏠 Andrahandskontrakt</button>
+                    <button role="menuitem" data-example="gym">🏋️ Gymmedlemskap</button>
+                    <button role="menuitem" data-example="avbetalning">💳 Delbetalning av TV</button>
+                    <button role="menuitem" data-example="abonnemang">📱 Mobilabonnemang</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="textarea-wrap">
+              <textarea id="contractText" rows="14" placeholder="Klistra in hela avtalet eller offerten här…&#10;&#10;📎 Har du en PDF? Dra och släpp den här, klistra in filen (Ctrl/Cmd + V) eller använd knappen ”Ladda upp PDF”.&#10;&#10;Tips: Ju mer text du klistrar in, desto fler fällor (och saknade skydd) kan vi hitta."></textarea>
+              <div class="drop-overlay" id="dropOverlay" hidden>
+                <span class="drop-icon">📄</span>
+                <strong>Släpp PDF:en här</strong>
+                <span class="muted small">Texten läses ut direkt i din webbläsare</span>
+              </div>
+              <div class="pdf-status" id="pdfStatus" hidden>
+                <span class="spinner" aria-hidden="true"></span>
+                <span id="pdfStatusText">Läser PDF…</span>
+              </div>
+            </div>
+            <div class="pdf-info" id="pdfInfo" hidden></div>
+            <div class="input-foot">
+              <span id="charCount" class="muted">0 tecken</span>
+              <div class="input-actions">
+                <button class="btn btn-ghost" id="clearBtn">Rensa</button>
+                <button class="btn btn-primary" id="analyzeBtn">🔍 Granska avtalet</button>
+              </div>
+            </div>
+            <p class="privacy-note">🔒 All analys sker lokalt i din webbläsare – även PDF-läsningen. Ingenting skickas till någon server.</p>
+          </div>
+
+          <!-- RESULTAT -->
+          <div id="results" class="results" hidden>
+            <div class="result-summary card">
+              <div class="score-wrap">
+                <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+                  <circle cx="60" cy="60" r="52" class="ring-bg"/>
+                  <circle cx="60" cy="60" r="52" class="ring-fg" id="scoreRing"/>
+                </svg>
+                <div class="score-value"><span id="scoreNumber">0</span><small>/100</small></div>
+              </div>
+              <div class="summary-text">
+                <span class="detected-type" id="detectedType"></span>
+                <h3 id="verdictTitle">Resultat</h3>
+                <p id="verdictText"></p>
+                <div class="counts">
+                  <span class="count count-high"><b id="countHigh">0</b> allvarliga</span>
+                  <span class="count count-med"><b id="countMed">0</b> varningar</span>
+                  <span class="count count-low"><b id="countLow">0</b> att notera</span>
+                  <span class="count count-ok"><b id="countOk">0</b> bra</span>
+                </div>
+              </div>
+              <div class="summary-actions">
+                <button class="btn btn-small btn-ghost" id="printBtn">🖨️ Skriv ut rapport</button>
+                <button class="btn btn-small btn-ghost" id="copyBtn">📋 Kopiera frågor</button>
+              </div>
+            </div>
+
+            <!-- Snabbnavigering i resultatet – visas bara på mobil -->
+            <nav class="results-nav" aria-label="Hoppa i resultatet">
+              <a href="#findingsCard">⚠️ Fynd</a>
+              <a href="#docCard">📄 Avtalet</a>
+              <a href="#questionsCard">💬 Frågor</a>
+            </nav>
+
+            <div class="result-grid">
+              <div class="card findings-card" id="findingsCard">
+                <div class="findings-head">
+                  <h3>Fynd</h3>
+                  <div class="filter" role="group" aria-label="Filtrera fynd">
+                    <button class="chip active" data-filter="all">Alla</button>
+                    <button class="chip" data-filter="high">Allvarliga</button>
+                    <button class="chip" data-filter="medium">Varningar</button>
+                    <button class="chip" data-filter="missing">Saknas</button>
+                    <button class="chip" data-filter="ok">Bra</button>
+                  </div>
+                </div>
+                <ul id="findingsList" class="findings-list"></ul>
+              </div>
+
+              <div class="card doc-card" id="docCard">
+                <h3>Ditt avtal med markeringar</h3>
+                <p class="muted small">Tryck på en markering för att se förklaringen.</p>
+                <div class="legend">
+                  <span><i class="dot high"></i>Allvarlig</span>
+                  <span><i class="dot medium"></i>Varning</span>
+                  <span><i class="dot low"></i>Notera</span>
+                  <span><i class="dot ok"></i>Bra</span>
+                </div>
+                <div id="annotatedDoc" class="annotated-doc"></div>
+              </div>
+            </div>
+
+            <div class="card questions-card" id="questionsCard">
+              <h3>💬 Frågor att ställa innan du skriver på</h3>
+              <p class="muted">Baserat på fynden ovan. Be om svaren skriftligt – muntliga löften är svåra att bevisa.</p>
+              <ol id="questionList" class="question-list"></ol>
+            </div>
+
+            <a href="#granska" class="btn btn-ghost new-check-btn">↑ Granska ett nytt avtal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVTALSTYPER -->
+    <section id="avtalstyper" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vanliga fällor per avtalstyp</h2>
+          <p>Det här är några av de saker Avtalskollen letar efter.</p>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="hantverkare">🔨 Hantverkare</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="hyra">🏠 Hyreskontrakt</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="gym">🏋️ Gym</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="avbetalning">💳 Avbetalning</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="abonnemang">📱 Abonnemang</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" data-panel="hantverkare">
+            <div class="trap-grid">
+              <article class="trap"><h4>“Ungefärligt pris”</h4><p>Ett ungefärligt pris får enligt konsumenttjänstlagen överskridas med högst 15 %. Men “löpande räkning” utan takpris har inget sådant skydd alls.</p></article>
+              <article class="trap"><h4>Stora förskott</h4><p>Betala aldrig stora delar i förväg. Om firman går i konkurs är pengarna sannolikt borta. Betala i takt med utfört arbete.</p></article>
+              <article class="trap"><h4>Tilläggsarbeten (ÄTA)</h4><p>Utan skriftligt krav på godkännande kan extraarbeten smyga in på fakturan. Kräv att alla tillägg prissätts och godkänns skriftligt.</p></article>
+              <article class="trap"><h4>Friskrivning från ansvar</h4><p>Hantverkaren kan inte avtala bort sitt ansvar för fel mot en konsument. Klausuler som påstår det är ogiltiga – men en varningsflagga.</p></article>
+              <article class="trap"><h4>ROT-avdraget</h4><p>Om Skatteverket nekar ROT – vem betalar mellanskillnaden? Kontrollera att arbetskostnad och material är separerade.</p></article>
+              <article class="trap"><h4>Ingen sluttid</h4><p>Utan avtalad sluttid blir det svårt att kräva prisavdrag eller häva vid förseningar.</p></article>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="hyra" hidden>
+            <div class="trap-grid">
+              <article class="trap"><h4>Avstående från besittningsskydd</h4><p>Att avstå besittningsskyddet för en förstahandsuthyrning kräver normalt godkännande av hyresnämnden. Läs noga.</p></article>
+              <article class="trap"><h4>Lång uppsägningstid</h4><p>För hyresgästen är uppsägningstiden för bostad på obestämd tid tre kalendermånader. Längre tid är inte bindande för dig.</p></article>
+              <article class="trap"><h4>Hög deposition</h4><p>Deposition är tillåten men bör vara rimlig. Mer än 3 månadshyror är en varningssignal – särskilt om pengarna ska betalas innan visning.</p></article>
+              <article class="trap"><h4>Hyreshöjning när som helst</h4><p>Hyresvärden kan inte ensidigt höja hyran under avtalstiden om det inte finns en giltig indexklausul eller överenskommelse.</p></article>
+              <article class="trap"><h4>Ansvar för allt underhåll</h4><p>Hyresvärden ansvarar normalt för att lägenheten är i godtagbart skick. Klausuler som lägger allt underhåll på dig bör ifrågasättas.</p></article>
+              <article class="trap"><h4>Vite och straffavgifter</h4><p>Fasta “straffavgifter” för exempelvis sen betalning eller gäster kan vara oskäliga och sakna stöd i hyreslagen.</p></article>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="gym" hidden>
+            <div class="trap-grid">
+              <article class="trap"><h4>Automatisk förlängning</h4><p>Bindningstiden löper ut – men avtalet förlängs automatiskt med en ny bindningsperiod om du inte säger upp i tid.</p></article>
+              <article class="trap"><h4>Lång bindningstid</h4><p>Bindningstider över 12 månader är ovanligt långa. Kontrollera vad det kostar att bryta i förtid.</p></article>
+              <article class="trap"><h4>Ensidiga prishöjningar</h4><p>“Vi förbehåller oss rätten att ändra priset” – utan rätt för dig att säga upp vid höjning är det en fälla.</p></article>
+              <article class="trap"><h4>Ingen frysning vid sjukdom</h4><p>Bra avtal låter dig frysa eller avsluta medlemskapet vid sjukdom, skada, graviditet eller flytt.</p></article>
+              <article class="trap"><h4>Uppsägning bara skriftligt/på plats</h4><p>Krångliga uppsägningsregler (brev, personligt besök) gör det svårt att ta sig ur avtalet.</p></article>
+              <article class="trap"><h4>Ångerrätt online</h4><p>Tecknar du online har du som regel 14 dagars ångerrätt enligt distansavtalslagen.</p></article>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="avbetalning" hidden>
+            <div class="trap-grid">
+              <article class="trap"><h4>“0 % ränta” som blir dyr</h4><p>Räntefria kampanjer övergår ofta till hög ränta efter några månader – och avgifter kan göra även “räntefritt” dyrt.</p></article>
+              <article class="trap"><h4>Hög effektiv ränta</h4><p>Jämför alltid den effektiva räntan, inte månadsbeloppet. Den visar vad krediten kostar per år inklusive alla avgifter.</p></article>
+              <article class="trap"><h4>Kontokredit utan slut</h4><p>Betalar du bara “lägsta belopp” kan skulden ta många år att betala av och kosta mer än själva varan.</p></article>
+              <article class="trap"><h4>Hela skulden förfaller</h4><p>Kreditgivaren får inte kräva hela skulden direkt för en enstaka sen betalning – lagen kräver mer än en månads dröjsmål och fyra veckors varsel.</p></article>
+              <article class="trap"><h4>Avgift för att betala i förtid</h4><p>Du har alltid rätt att betala av i förtid. Ersättningen till kreditgivaren får vara högst 1 % – och ingenting vid rörlig ränta.</p></article>
+              <article class="trap"><h4>Dyrt betalskydd</h4><p>Försäkringar kopplade till krediten kostar ofta mycket och har många undantag. Kontrollera om de är frivilliga.</p></article>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="abonnemang" hidden>
+            <div class="trap-grid">
+              <article class="trap"><h4>Gratisperiod blir fullpris</h4><p>Prova gratis i 30 dagar – sedan dras ordinarie pris automatiskt om du inte säger upp i tid.</p></article>
+              <article class="trap"><h4>Lång bindningstid</h4><p>För mobil och bredband får bindningstiden vara högst 24 månader, och operatören måste även erbjuda högst 12 månader.</p></article>
+              <article class="trap"><h4>Automatisk förlängning</h4><p>Efter bindningstiden ska abonnemanget gå att säga upp med högst en månads varsel – inte låsas i en ny period.</p></article>
+              <article class="trap"><h4>Telefonen i abonnemanget</h4><p>En “billig” mobil som delbetalas via abonnemanget kan bli dyr – och resten ska betalas om du säger upp i förtid.</p></article>
+              <article class="trap"><h4>Tjänster du inte beställt</h4><p>Tilläggstjänster som aktiveras “om du inte säger nej” behöver du inte betala för. Tystnad är inget ja.</p></article>
+              <article class="trap"><h4>Avtal via telefon</h4><p>Har ett företag ringt och sålt ett avtal måste du bekräfta det skriftligt innan det blir bindande.</p></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÄTTIGHETER -->
+    <section id="rattigheter" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dina rättigheter som konsument</h2>
+          <p>Lagarna som skyddar dig – oavsett vad det står i avtalet.</p>
+        </div>
+        <div class="law-grid">
+          <article class="law card">
+            <span class="law-tag">SFS 1985:716</span>
+            <h4>Konsumenttjänstlagen</h4>
+            <p>Gäller hantverkstjänster. Ger rätt till fackmässigt utfört arbete, prisavdrag, avhjälpande och hävning. Ungefärligt pris får överskridas med max 15 %.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">Jordabalken 12 kap.</span>
+            <h4>Hyreslagen</h4>
+            <p>Tvingande till hyresgästens förmån. Reglerar uppsägningstider, besittningsskydd, underhåll och andrahandsuthyrning.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">SFS 2012:978</span>
+            <h4>Privatuthyrningslagen</h4>
+            <p>Gäller när en privatperson hyr ut sin egen bostad. Hyran ska vara skälig utifrån kapitalkostnad och driftkostnad.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">SFS 2005:59</span>
+            <h4>Distansavtalslagen</h4>
+            <p>Ger 14 dagars ångerrätt när du tecknar avtal på distans eller utanför affärslokaler, t.ex. online eller vid dörrförsäljning.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">SFS 1994:1512</span>
+            <h4>Avtalsvillkorslagen</h4>
+            <p>Oskäliga villkor i konsumentavtal kan förbjudas av Konsumentombudsmannen. Otydliga villkor tolkas till din fördel.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">36 § Avtalslagen</span>
+            <h4>Generalklausulen</h4>
+            <p>Avtalsvillkor som är oskäliga kan jämkas eller lämnas utan avseende av domstol – särskilt i konsumentförhållanden.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">SFS 2010:1846</span>
+            <h4>Konsumentkreditlagen</h4>
+            <p>Gäller avbetalningar och lån. Ger 14 dagars ångerrätt, rätt att betala i förtid och sätter tak för räntan och de totala kreditkostnaderna.</p>
+          </article>
+          <article class="law card">
+            <span class="law-tag">SFS 2022:482</span>
+            <h4>Lagen om elektronisk kommunikation</h4>
+            <p>Gäller mobil- och bredbandsabonnemang. Bindningstiden får vara högst 24 månader och du får säga upp vid försämrade villkor.</p>
+          </article>
+        </div>
+        <div class="help-box card">
+          <h3>Behöver du mer hjälp?</h3>
+          <div class="help-links">
+            <a href="https://www.hallakonsument.se" target="_blank" rel="noopener">Hallå konsument ↗</a>
+            <a href="https://www.arn.se" target="_blank" rel="noopener">Allmänna reklamationsnämnden (ARN) ↗</a>
+            <a href="https://www.konsumenternas.se" target="_blank" rel="noopener">Konsumenternas bank- och finansbyrå ↗</a>
+            <a href="https://www.telekomradgivarna.se" target="_blank" rel="noopener">Telekområdgivarna ↗</a>
+            <a href="https://www.hyresnamnden.se" target="_blank" rel="noopener">Hyresnämnden ↗</a>
+            <a href="https://www.konsumentverket.se" target="_blank" rel="noopener">Konsumentverket ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>Vanliga frågor</h2>
+        </div>
+        <details class="faq">
+          <summary>Är Avtalskollen juridisk rådgivning?</summary>
+          <p>Nej. Verktyget letar efter mönster i texten som ofta innebär risker och förklarar vad lagen brukar säga. Det ersätter inte en jurist. Vid stora belopp eller tvister – kontakta en jurist, din kommuns konsumentvägledare eller Hyresgästföreningen.</p>
+        </details>
+        <details class="faq">
+          <summary>Sparas min avtalstext någonstans?</summary>
+          <p>Nej. Allt körs i din webbläsare med JavaScript. Ingen text skickas till någon server och ingenting sparas när du stänger sidan.</p>
+        </details>
+        <details class="faq">
+          <summary>Hur räknas poängen ut?</summary>
+          <p>Du börjar på 100. Allvarliga fynd drar av mest, varningar mindre och saknade skydd lite. Bra klausuler ger tillbaka några poäng. Poängen är en fingervisning – läs alltid de enskilda fynden.</p>
+        </details>
+        <details class="faq">
+          <summary>Mitt avtal är en PDF – hur gör jag?</summary>
+          <p>Dra och släpp PDF:en i textrutan, klistra in filen med Ctrl/Cmd + V eller klicka på ”Ladda upp PDF”. Texten läses ut ur alla sidor och granskas direkt. Är PDF:en inskannad (en bild av papper) finns ingen text att läsa – använd då en OCR-funktion först, t.ex. ”Kopiera text” i telefonens kamera-app, och klistra in texten.</p>
+        </details>
+        <details class="faq">
+          <summary>Varför hittar verktyget inget i mitt avtal?</summary>
+          <p>Antingen är avtalet bra – eller så är formuleringarna ovanliga. Titta under “Saknas”-fynden: ibland är det som <em>inte</em> står i avtalet den största risken.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Avtalskollen</strong> – ett gratis verktyg för privatpersoner.</p>
+      <p class="muted small">Informationen är generell och utgör inte juridisk rådgivning. Kontrollera alltid aktuell lagstiftning.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- PDF-läsare (Mozilla pdf.js) – läser ut text ur PDF-filer lokalt i webbläsaren -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/examples.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
